@@ -1,0 +1,35 @@
+Customer Management using Spring Boot REST API Implementation
+----------------------------------------------------------------------------------
+
+This Project is a basic implementation of CRUD methods in Spring Boot Rest API.
+
+API Reference:
+
+1. Get all the Customers from database
+   GET localhost:8080/getCustomer/
+2. Get customer which has id equal to link {id}
+   GET localhost:8080/getCustomer/{id}
+3. Search customer which has id equal to link {id}
+   GET localhost:8080/searchCustomer/{id}
+4. Delete customer with id equal to link {id}
+   GET localhost:8080/delete/{id}
+5. Update customer name for id equal to link {id}
+   GET localhost:8080/updateCustomer?id=101&name=chirag
+6. Save customer name for id equal to link {id}
+   GET localhost:8080/saveCustomer?id=101&name=chirag
+
+Input:
+
+This project uses H2, in-memory database and a data.sql file with queries to insert data into the table whenever the application is up and running.
+
+
+How to run:
+
+1. To run as a standalone spring boot application which has an embedded tomcat, run the command mvn spring-boot:run in the folder where pom.xml is located
+2. To create a war and deploy it n tomcat server, follow below steps:
+	a. run mvn clean install - This will create a war file inside target folder e.g. CustomerManagement-0.0.1-SNAPSHOT.war	
+	b. Download Apache Tomcat in your local machine and copy this war file inside the webapps/ folder
+	c. Go inside bin folder in your tomcat and run startup.sh file
+	d. Now in your browser, navigate to  localhost:8080/CustomerManagement-0.0.1-SNAPSHOT.war/ to see if your application is up and running (This will now be the root path for all endpoints)
+	e. Get all Customers - http://localhost:8080/CustomerManagement-0.0.1-SNAPSHOT/getCustomer
+
